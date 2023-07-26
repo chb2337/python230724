@@ -1,8 +1,8 @@
-# db1.py
+# db2.py
 import sqlite3
 
-#연결객체 생성
-con = sqlite3.connect(":memory:")
+#연결객체 생성(파일에 저장)
+con = sqlite3.connect("c:\\work\\sample.db")
 #커서객체
 cur = con.cursor()
 #테이블 구조 생성
@@ -28,16 +28,9 @@ cur.executemany("insert into PhoneBook (name, phoneNum) values " +
 
 #검색구문
 cur.execute("select * from PhoneBook;")
-print("---fetchone()---") #버퍼에서 레코드 삭제됨
-print(cur.fetchone())
-print("---fetchone()---") #버퍼에서 레코드 삭제됨
-print(cur.fetchone())
-print("---fetchone(2)---")
-print(cur.fetchmany(2))
-cur.execute("select * from PhoneBook;") # 버퍼 다시 채우기
-print("---fetchall()---")
 print(cur.fetchall())
-
+#작업 완료
+con.commit()
 
 
 # for row in cur:
