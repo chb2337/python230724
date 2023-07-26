@@ -27,13 +27,22 @@ print("{0:2f}".format(4/3))
 
 #파일 쓰기
 f = open("c:\\work\\demo.txt", "wt", encoding="utf-8")
-f.write("첫번째\n두번째\n세번째\n")
+f.write("첫번째\n두번째\n세번째\n") #\n 줄바꾸기
 f.close()
 
 
 #파일 읽기
-f = open("c:\\work\\demo.txt", "rt", encoding="utf-8")
+f = open(r"c:\\work\\demo.txt", "rt", encoding="utf-8") #r
 result = f.read()
+print("---라인 단위---")
+f.seek(0)
+print( f.readline(), end="" )
+print( f.readline(), end="" ) #줄바꾸지마 end="" 없으면 빈줄 생김
+print("---리스트로 받기---")
+f.seek(0)
+result = f.readlines()
+print(result)
+
 f.close()
 print(result)
 
