@@ -8,7 +8,7 @@ class BankAccount:
         self.__name = name 
         self.__balance = balance 
     def deposit(self, amount):
-        self.__balance += amount 
+        self.__balance += amount 8
     def withdraw(self, amount):
         self.__balance -= amount
     def __str__(self):
@@ -20,4 +20,3 @@ account1 = BankAccount(100, "전우치", 15000)
 account1.deposit(5000)
 account1.withdraw(3000)
 print(account1)
-print(account1.__balance)
