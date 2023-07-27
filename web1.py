@@ -1,29 +1,27 @@
 # web1.py
-#크롤링을 하기 위한 선언
 from bs4 import BeautifulSoup
 
-#페이지를 로딩
-page = open("c:\\work\\test01.html", "rt", encoding="utf-8").read()
-#검색이 용이한 객체 생성
+page = open("c:\\work\\test01.html", "rt", 
+    encoding="utf-8").read()
 soup = BeautifulSoup(page, "html.parser")
-#페이지 보기
-# print(soup.prettify())
+#print(soup.prettify())
 
-#<p>전체를 검색
-# print(soup.find_all("p"))
-#<p>하나를 검색
-# print(soup.find("p"))
+# print("---전체 <p>태그를 검색---")
+# print( soup.find_all("p") ) 
 
+# print("---하나를 검색하는 경우--")
+# print( soup.find("p") )
+# print("---조건이 있는 경우---")
+# print( soup.find_all("p", class_="outer-text") )
+# print("---attrs속성을 사용하는경우---")
+# print( soup.find_all("p", attrs={"class":"outer-text"}))
 
-#id=first
-# print(soup.find_all(id="first"))
+# print("---id를 지정한다---")
+# print( soup.find_all(id="first") )
 
-#태그 내부 문자열 가져오기(.text속성)
-for tag in soup.find_all("p"):
-    title = tag.text.strip()  #strip 공백문자 제거
-    title = title.replace("\n", "") # 줄바꿈 제거
+print("---검색한 요소에서 컨텐츠만 출력한다.---")
+for item in soup.find_all("p"):
+    title = item.text.strip()
+    title = title.replace("\n","")
     print(title)
-
-
-
 
