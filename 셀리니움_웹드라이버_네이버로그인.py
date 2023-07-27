@@ -18,12 +18,12 @@ driver.get('https://nid.naver.com/nidlogin.login')
 # time.sleep(1)   # 1초 시간 지연
 
 # 로그인 창에 아이디/비밀번호 입력
-loginID = "chb2337"
+loginID = "ch"
 clipboard.copy(loginID)
 #mac은 COMMAND, window는 CONTROL
 driver.find_element(By.XPATH,'//*[@id="id"]').send_keys(Keys.CONTROL, 'v')
 
-loginPW = "Chl5446538@@"
+loginPW = "Ch@"
 clipboard.copy(loginPW)
 driver.find_element(By.XPATH,'//*[@id="pw"]').send_keys(Keys.CONTROL, 'v')
 time.sleep(1)
